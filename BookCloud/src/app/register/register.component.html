@@ -1,0 +1,81 @@
+
+<mat-card  class="main-card">
+        <mat-card-content>
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form">
+                <table class="full-width" cellspacing="0">
+
+                    <!-- Usuario -->
+                    <tr>
+                            <td>
+                                <mat-form-field class="full-width">
+                                    <input matInput placeholder="Usuario" type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                        <div *ngIf="f.username.errors.required">Debes introducir un nombre de usuario</div>
+                                    </div>
+                                </mat-form-field>
+                            </td>
+                    </tr>
+
+                    <!-- Contraseña -->
+                    <tr>
+                            <td>
+                                <mat-form-field class="full-width">
+                                    <input matInput placeholder="Contraseña" type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                        <div *ngIf="f.password.errors.required">Debes introducir una contraseña</div>
+                                        <div *ngIf="f.password.errors.minlength">La contraseña debe ser de mínimo 6 caracteres</div>
+                                    </div>
+                                </mat-form-field>
+                            </td>
+                    </tr>
+
+                    <!-- Contraseña -->
+                    <tr>
+                            <td>
+                                <mat-form-field class="full-width">
+                                    <input matInput placeholder="Email" type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                        <div *ngIf="f.email.errors.required">Debes introducir una contraseña</div>
+                                        <div *ngIf="f.email.errors.minlength">La contraseña debe ser de mínimo 4 caracteres</div>
+                                    </div>
+                                </mat-form-field>
+                            </td>
+                    </tr>
+
+                    <!-- Nombre -->
+                    <tr>
+                        <td>
+                            <mat-form-field class="full-width">
+                                <input matInput placeholder="Nombre" type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                                <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.firstName.errors.required">Debes introducir tu nombre</div>
+                                </div>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+
+                    <!-- Apellidos -->
+                    <tr>
+                            <td>
+                                <mat-form-field class="full-width">
+                                    <input matInput placeholder="Apellidos" type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                                    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                                        <div *ngIf="f.lastName.errors.required">Debes introducir tus apellido</div>
+                                    </div>
+                                </mat-form-field>
+                            </td>
+                    </tr>
+
+                </table>
+
+                <mat-card-actions>
+                        <button mat-raised-button color="primary" [disabled]="loading" class="btn btn-primary">Registrarse!</button>
+                        <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                        <a mat-raised-button color="primary" routerLink="/login" class="btn btn-link">Cancelar</a>
+
+                </mat-card-actions>
+            </form>
+          
+        </mat-card-content>
+        
+</mat-card>

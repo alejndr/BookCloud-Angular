@@ -1,0 +1,21 @@
+
+
+<body>
+  <!-- Background -->
+  <div class="bg">
+    <!-- nav -->
+    <app-navbar></app-navbar> 
+
+    <!-- Logo -->
+    <div style="text-align:center">
+      <img width="200" alt="BookCloud Logo" [routerLink]="['/books']" src="../assets/logo3.png">
+    </div>
+
+    <!-- App -->
+    <div class="container">
+        <app-alert></app-alert>
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+</body>

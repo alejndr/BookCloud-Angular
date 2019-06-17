@@ -1,0 +1,88 @@
+<div *ngIf=book class="container mat-elevation-z8">
+  
+  <div class="loading-shade"
+       *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+
+  <div class="button-row">
+    <a mat-flat-button color="primary" [routerLink]="['/books']"><mat-icon>list</mat-icon></a>
+  </div>
+
+  <!-- book details -->
+  <mat-card class="book-card">
+    <mat-card-header>
+      
+      <mat-card-title><h2>{{book.BookTitulo}}</h2></mat-card-title>
+      <mat-card-subtitle>{{book.BookAutor}}</mat-card-subtitle>
+      <mat-card-subtitle>{{book.BookGenero}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src={{book.BookPortada}} alt="{{book.BookTitulo}}">
+    <mat-card-content>
+      <dl>
+        <dt>Sinopsis:</dt>
+        <dd>{{book.BookSinopsis}}</dd>
+        <dt>ISBN:</dt>
+        <dd>{{book.BookISBN}}</dd>
+        <dt>Páginas:</dt>
+        <dd>{{book.BookPaginas}}</dd>
+        <dt>Puntuación:</dt>
+        <dd>{{book.BookPuntuacion}}</dd>
+        <dt>Actualizado:</dt>
+        <dd>{{book.updatedAt}}</dd>
+      </dl>
+
+
+    </mat-card-content>
+    <mat-card-actions *ngIf="admin()">
+      <a mat-flat-button color="primary" [routerLink]="['/book-edit', book._id]"><mat-icon>edit</mat-icon></a>
+      <a mat-flat-button color="warn" (click)="deleteBook(book._id)"><mat-icon>delete</mat-icon></a>
+    </mat-card-actions>
+  </mat-card>
+
+  <!-- Reviews -->
+  <mat-card class="review-card" *ngFor="let reviews of data.reviews">
+    <mat-card-header>
+      <mat-card-title><h2>Critica de: {{reviews.username}}</h2></mat-card-title>
+      
+    </mat-card-header>
+    <mat-card-content>
+      <dl>
+        <dd>{{reviews.body}}</dd>
+
+        <dd>Puntuación: {{reviews.rating}}</dd>
+        
+      </dl>
+
+      
+    </mat-card-content>
+  </mat-card>
+
+  <!-- submit review -->
+  <mat-card class="submit-review-card">
+    <form [formGroup]="reviewForm" (ngSubmit)="onFormSubmit(reviewForm.value)">
+
+      <!-- Review body -->
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="Crítica" formControlName="body"
+               [errorStateMatcher]="matcher"></textarea>
+        <mat-error>
+          <span *ngIf="!reviewForm.get('body').valid && reviewForm.get('body').touched">Deberias de escribir algo antes de guardar tu comentario</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Puntuación 1-10" formControlName="rating"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!reviewForm.get('rating').valid && reviewForm.get('rating').touched">Debes ponerle una puntuación valida</span>
+        </mat-error>
+      </mat-form-field>
+
+      <div class="button-row">
+        <button type="submit" [disabled]="!reviewForm.valid"  mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
+      </div>
+    </form>
+  </mat-card>
+</div>
+

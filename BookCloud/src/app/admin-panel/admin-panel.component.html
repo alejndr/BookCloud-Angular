@@ -1,0 +1,22 @@
+<h1>Usuarios registrados:</h1>
+
+<!-- users -->
+<mat-card class="users-card" *ngFor="let user of users">
+  <mat-card-header>
+    <mat-card-title><h2>{{user.username}}</h2></mat-card-title>
+    
+  </mat-card-header>
+  <mat-card-content>
+    <dl>
+
+      <dd>Nombres y apellidos: {{user.firstName}} {{user.lastName}}</dd>
+      <dd>Email: {{user.email}}</dd>
+      <dd>Estatus: {{user.status}}</dd>
+
+    </dl>
+<mat-card-actions>
+      <a mat-flat-button color="warn" (click)="deleteUser(user.id)"><mat-icon>delete</mat-icon></a>
+    </mat-card-actions>
+    
+  </mat-card-content>
+</mat-card>

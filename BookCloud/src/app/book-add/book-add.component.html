@@ -1,0 +1,73 @@
+<div class="container mat-elevation-z8">
+  <div class="loading-shade"
+       *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+    <a mat-flat-button color="primary" [routerLink]="['/books']"><mat-icon>list</mat-icon></a>
+  </div>
+  <mat-card class="card">
+    <form [formGroup]="bookForm" (ngSubmit)="onFormSubmit(bookForm.value)">
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Titulo" formControlName="BookTitulo"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!bookForm.get('BookTitulo').valid && bookForm.get('BookTitulo').touched">Please enter Book Title</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Autor" formControlName="BookAutor"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!bookForm.get('BookAutor').valid && bookForm.get('BookAutor').touched">Please enter Book Autor</span>
+        </mat-error>
+      </mat-form-field>
+      
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Genero" formControlName="BookGenero"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!bookForm.get('BookGenero').valid && bookForm.get('BookGenero').touched">Please enter Book Genero</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="ISBN" formControlName="BookISBN"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!bookForm.get('BookISBN').valid && bookForm.get('BookISBN').touched">Please enter Book ISBN</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="Sipnosis" formControlName="BookSinopsis"
+               [errorStateMatcher]="matcher"></textarea>
+        <mat-error>
+          <span *ngIf="!bookForm.get('BookSinopsis').valid && bookForm.get('BookSinopsis').touched">Please enter Book Sipnopsis</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+          <input matInput placeholder="Link Portada" formControlName="BookPortada"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!bookForm.get('BookPortada').valid && bookForm.get('BookPortada').touched">Please enter Book Paginas</span>
+          </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+          <input matInput placeholder="Páginas" formControlName="BookPaginas"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!bookForm.get('BookPaginas').valid && bookForm.get('BookPaginas').touched">Please enter Book Paginas</span>
+          </mat-error>
+      </mat-form-field>
+
+      <div class="button-row">
+        <button type="submit" [disabled]="!bookForm.valid"  mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
+      </div>
+    </form>
+  </mat-card>
+</div>

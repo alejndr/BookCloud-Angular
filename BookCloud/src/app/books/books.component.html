@@ -1,0 +1,37 @@
+<div class="container mat-elevation-z8">
+  <div class="loading-shade"
+       *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+    <a mat-flat-button color="primary" *ngIf="admin()" [routerLink]="['/book-add']"><mat-icon>add</mat-icon></a>
+  </div>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="tableDataSource" class="table"
+           matSort matSortActive="BookTitulo" matSortDisableClear matSortDirection="asc">
+
+      
+      <!-- Book Name Column -->
+      <ng-container matColumnDef="BookTitulo">
+        <th mat-header-cell *matHeaderCellDef>Titulo</th>
+        <td mat-cell *matCellDef="let row">{{row.BookTitulo}}</td>
+      </ng-container>
+
+      <!-- Book Price Column -->
+      <ng-container matColumnDef="BookAutor">
+        <th mat-header-cell *matHeaderCellDef>Autor</th>
+        <td mat-cell *matCellDef="let row">{{row.BookAutor}}</td>
+      </ng-container>
+
+      <!-- Book Price Column -->
+      <ng-container matColumnDef="BookGenero">
+        <th mat-header-cell *matHeaderCellDef>Genero</th>
+        <td mat-cell *matCellDef="let row">{{row.BookGenero}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/book-details/', row._id]"></tr>
+    </table>
+    <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

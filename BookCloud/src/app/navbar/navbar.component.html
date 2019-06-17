@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Bookcloud</span>
+    <span class="spacer"></span>
+    <mat-icon routerLink="/" class="icon">home</mat-icon>
+    <mat-icon *ngIf="admin()" routerLink="/AdminPanel" class="icon">settings</mat-icon>
+    <mat-icon (click)="logout()" class="icon">exit_to_app</mat-icon>
+  </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,67 @@
+/* Structure */
+.container {
+  position: relative;
+  padding: 5px;
+  
+}
+
+.loading-shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 56px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-flat-button {
+  margin: 5px;
+}
+
+.book-card{
+  max-width: 300px;
+  position: relative;
+  margin-top: 5px;
+  margin-right: 80px;
+  margin-bottom: 10px;
+  float: right;
+  
+}
+
+@media screen and (max-width: 1300px){
+  .book-card{
+    float: none;
+  }
+}
+
+.review-card{
+  max-width: 59%;
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-left: 50px;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.submit-review-card{
+  max-width: 59%;
+  display: block;
+  position: relative;
+  margin-right: 5px;
+  margin-left: 50px;
+}
+
+
+
+.full-width {
+  width: 100%;
+}
+
+img{
+  background-size: cover;
+  
+}
