@@ -175,8 +175,7 @@ Google también lanzó APIs para que los desarrolladores externos incorporaran M
 La web consta de 4 módulos visibles a usuarios sin status a las que se suman 3 que solo pueden ver usuarios con el status de admin.
 
 
-
-
+![](DocumentationAssets/mapa.png)
 
 
 
