@@ -147,6 +147,7 @@ La api puede recibir llamadas a 3 secciones, una por cada controlador de cada mo
 
 
 Angular 7
+
 ![](DocumentationAssets/angular.png)
 
 Es un framework para aplicaciones web desarrollado en TypeScript, de código abierto, mantenido por Google, que se utiliza para crear y mantener aplicaciones web de una sola página. Su objetivo es aumentar las aplicaciones basadas en navegador con capacidad de Modelo Vista Controlador (MVC), en un esfuerzo para hacer que el desarrollo y las pruebas sean más fáciles.
