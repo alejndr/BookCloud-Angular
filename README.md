@@ -159,7 +159,7 @@ Es un framework para aplicaciones web desarrollado en TypeScript, de código abi
 
 Material Design
 
-![](DocumentationAssets/material.png)
+![](DocumentationAssets/material.jpg)
 
 Es una normativa de diseño enfocado en la visualización del sistema operativo Android, además en la web y en cualquier plataforma. Fue desarrollado por Google y anunciado en la conferencia Google I/O celebrada el 25 de junio de 2014. Ampliando la interfaz de tarjetas vista por primera vez en Google Now.
 
