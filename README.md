@@ -7,10 +7,14 @@ BookCloud es una aplicación donde dejar críticas, puntuar libros que has leíd
 Consta de 2 partes, la Aplicación y una API que accede a la BBDD alojada en mLab
 
 #
+# Usuarios de ejemplo:
+User: administrador
+pass: administrador
 
+User: usuario1
+pass: usuario1
 
-
-API – Tecnologías usadas
+# API – Tecnologías usadas
 
 ## MongoDB
 
